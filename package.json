@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "nodemon --exec tsx backend/server.ts",
+    "server:dev": "tsx backend/server.ts"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
