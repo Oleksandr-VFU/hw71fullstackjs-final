@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { MdRefresh } from "react-icons/md"
-import { createUrl } from "../../utils/mockapi"
-import { API_ITEMS_PER_PAGE_LIMIT } from "../../utils/mockapi"
+import { createUrl, API_ITEMS_PER_PAGE_LIMIT } from "../../config/api"
 import { debounce } from "../../utils/debounce"
 import Product from "../products/Product"
 import AddProduct from "../products/AddProduct"

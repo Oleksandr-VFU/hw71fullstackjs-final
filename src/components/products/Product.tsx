@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import type { ProductInterface } from '../../types/Product.Interface'
-import { API_URL } from '../../utils/mockapi'
+import { API_URL } from '../../config/api'
 import { useDelete } from '../../hooks/useDelete'
 import { FaTrash, FaEdit } from 'react-icons/fa'
 import EditProduct from './EditProduct'
