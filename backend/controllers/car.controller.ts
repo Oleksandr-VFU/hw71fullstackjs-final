@@ -24,7 +24,9 @@ export const getAllCars = async (req: Request, res: Response): Promise<void> => 
 
     const totalCount = await Car.countDocuments(query);
 
-    res.json({ data: cars, totalCount });
+    const carsData = cars.map(car => car.toJSON());
+
+    res.json({ data: carsData, totalCount });
   } catch (error) {
     res.status(500).json({ error: 'Failed to fetch cars' });
   }
