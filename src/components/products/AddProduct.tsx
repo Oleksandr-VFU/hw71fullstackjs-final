@@ -1,0 +1,42 @@
+import { useState } from "react"
+import Modal from "../modals/Modal"
+import ProductForm from "../form/ProductForm"
+import type { ProductInterface } from "../../types/Product.Interface"
+import { useAdd } from "../../hooks/useAdd"
+import { API_URL } from "../../utils/mockapi"
+import { INITIAL_CAR } from "../../data/mockData"
+
+const AddProduct = () => {
+    const [showModal, setShowModal] = useState(false)
+    const {add} = useAdd(API_URL)
+
+    const handleOpen = () => setShowModal(true)
+    const handleClose = () => setShowModal(false)
+    const handleSubmit = async (product: Partial<ProductInterface>) => {
+        try {
+            const newCar = await add(product)
+            console.log('New Product:', newCar)
+            handleClose()
+        } catch (error) {
+            console.error(error)
+        }
+        
+    }
+
+  return (
+    <>
+        <div className="pagination">
+           <button className="add-product-btn" onClick={handleOpen}>Додати Автомобіль</button> 
+        </div>
+        
+        {showModal && (
+            <Modal onClose={handleClose}>
+                <h2 className="modal__title">Додати новий автомобіль</h2>
+                <ProductForm onSubmit={handleSubmit} product={INITIAL_CAR} />
+            </Modal>
+        )}
+    </>
+  )
+}
+
+export default AddProduct
