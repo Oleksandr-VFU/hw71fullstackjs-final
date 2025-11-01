@@ -15,8 +15,7 @@ const CarSchema: Schema = new Schema(
       required: [true, 'Name is required'],
       trim: true,
       minlength: [2, 'Name must be at least 2 characters long'],
-      maxlength: [100, 'Name cannot exceed 100 characters'],
-      index: true
+      maxlength: [100, 'Name cannot exceed 100 characters']
     },
     description: {
       type: String,
@@ -28,8 +27,7 @@ const CarSchema: Schema = new Schema(
     price: {
       type: Number,
       required: [true, 'Price is required'],
-      min: [0, 'Price cannot be negative'],
-      index: true
+      min: [0, 'Price cannot be negative']
     },
     image: {
       type: String,
@@ -39,8 +37,7 @@ const CarSchema: Schema = new Schema(
     category: {
       type: String,
       required: [true, 'Category is required'],
-      enum: ['Coupe', 'Electric', 'Hatchback', 'Pickup', 'Sedan', 'SUV', 'Van'],
-      index: true
+      enum: ['Coupe', 'Electric', 'Hatchback', 'Pickup', 'Sedan', 'SUV', 'Van']
     }
   },
   {
