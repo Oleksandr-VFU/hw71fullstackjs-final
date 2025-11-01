@@ -30,25 +30,6 @@ const Navbar = () => {
             Автомобілі
           </NavLink>
         </li>
-        {isLoggedIn && (
-          <>
-            <li className="navbar__item">
-              <NavLink to="/posts" className="navbar__link">
-                Публікації
-              </NavLink>
-            </li>
-            <li className="navbar__item">
-              <NavLink to="/users" className="navbar__link">
-                Користувачі
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/todos" className="navbar__link">
-                Завдання
-              </NavLink>
-            </li>
-          </>
-        )}
         <li className="navbar__item">
           {isLoggedIn ? (
             <button className="navbar__button navbar__button--logout" onClick={handleLogout}>Вийти</button>
